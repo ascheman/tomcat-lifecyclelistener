@@ -22,7 +22,7 @@ public class FailstopLifecycleListener implements LifecycleListener {
     /**
      * The port of the shutdown listener of Tomcat - see server.xml
      */
-    private String port = "8015";
+    private int port = 8015;
 
     /**
      * The command string to send for shutdown - see server.xml
@@ -34,7 +34,11 @@ public class FailstopLifecycleListener implements LifecycleListener {
      */
     private boolean force;
 
-    @Override
+    /**
+     * How long should we wait to start the server before the shutdown port might be open!
+     */
+    private int waitForStart = 30;
+
     public void lifecycleEvent(LifecycleEvent event) {
         String type = event.getType();
         Lifecycle lifecycle = event.getLifecycle();
@@ -63,24 +67,26 @@ public class FailstopLifecycleListener implements LifecycleListener {
         @Override
         public void run() {
             try {
+                LOG.info ("Waiting #" + waitForStart + "s until shutdown port might be open");
+                Thread.sleep(waitForStart * 1000);
                 LOG.info ("Shutting down server via port '" + port + "' and command '" + shutdown + "'");
                 Socket s = new Socket("127.0.0.1", Integer.valueOf(port));
                 PrintStream os = new PrintStream(s.getOutputStream());
                 os.println(shutdown);
                 s.close();
-            } catch (IOException e) {
+            } catch (Exception e) {
                 LOG.severe ("Could not shut down server: " + e);
             }
         }
     }
 
     public String getPort() {
-        return port;
+        return String.valueOf(port);
     }
 
     public void setPort(String port) {
         LOG.info ("Set Tomcat shutdown port to '" + port + "'");
-        this.port = port;
+        this.port = Integer.valueOf(port);
     }
 
     public String getShutdown() {
@@ -99,5 +105,14 @@ public class FailstopLifecycleListener implements LifecycleListener {
     public void setForce(boolean force) {
         LOG.info ("Set Tomcat force exit to '" + force + "'");
         this.force = force;
+    }
+
+    public String getWaitForStart() {
+        return String.valueOf(waitForStart);
+    }
+
+    public void setWaitForStart(String waitForStart) {
+        LOG.info ("Set Tomcat waitForStart to '" + waitForStart + "'");
+        this.waitForStart = Integer.valueOf(waitForStart);
     }
 }

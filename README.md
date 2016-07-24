@@ -10,9 +10,11 @@ Add it to Tomcat:
 
 ```xml
     <!-- Stop on failed deployments:
-         - Set "force" to just "System.exit" the server
-         - Otherwise set port and shutdown command as in server.xml to enable call to shutdown port
+         - Set "force" to just perform a "System.exit" of the server JVM
+         - Otherwise enable call to shutdown port, optionally
+           - set port (default: 8015) and shutdown command (default: shutdown) as in server.xml
+           - set waitForStart (default 30s) to make the shut down command wait until TC is completely up and running
     -->
     <Listener className="net.aschemann.tomcat.lifecycle.FailstopLifecycleListener" force="true" />
-    <!-- port="29821" shutdown="SHUTDOWN" /> -->
+    <!-- port="29821" shutdown="SHUTDOWN" waitForStart="20" /> -->
 ```
