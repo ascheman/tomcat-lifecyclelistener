@@ -45,7 +45,7 @@ public class FailstopLifecycleListener implements LifecycleListener {
         LifecycleState state = lifecycle.getState();
 
         String data = event.getData() != null ? event.getData().toString() : "";
-        LOG.info ("Lifecycle Event '" + lifecycle.toString() +
+        LOG.finer("Lifecycle Event '" + lifecycle.toString() +
                 "', State = '" + state +
                 "', Type = '" +  type +
                 "', Data = '" + data +
@@ -85,7 +85,7 @@ public class FailstopLifecycleListener implements LifecycleListener {
     }
 
     public void setPort(String port) {
-        LOG.info ("Set Tomcat shutdown port to '" + port + "'");
+        LOG.fine("Set Tomcat shutdown port to '" + port + "'");
         this.port = Integer.valueOf(port);
     }
 
@@ -94,7 +94,7 @@ public class FailstopLifecycleListener implements LifecycleListener {
     }
 
     public void setShutdown(String shutdown) {
-        LOG.info ("Set Tomcat shutdown command to '" + shutdown + "'");
+        LOG.fine("Set Tomcat shutdown command to '" + shutdown + "'");
         this.shutdown = shutdown;
     }
 
@@ -103,7 +103,7 @@ public class FailstopLifecycleListener implements LifecycleListener {
     }
 
     public void setForce(boolean force) {
-        LOG.info ("Set Tomcat force exit to '" + force + "'");
+        LOG.fine("Set Tomcat force exit to '" + force + "'");
         this.force = force;
     }
 
@@ -112,7 +112,7 @@ public class FailstopLifecycleListener implements LifecycleListener {
     }
 
     public void setWaitForStart(String waitForStart) {
-        LOG.info ("Set Tomcat waitForStart to '" + waitForStart + "'");
+        LOG.fine("Set Tomcat waitForStart to '" + waitForStart + "'");
         this.waitForStart = Integer.valueOf(waitForStart);
     }
 }
