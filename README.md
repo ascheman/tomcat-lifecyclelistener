@@ -1,5 +1,7 @@
 # Tomcat Failstop Lifecycle Listener
 
+[![Build Status](https://travis-ci.org/ascheman/tomcat-lifecyclelistener.svg?branch=master)](https://travis-ci.org/ascheman/tomcat-lifecyclelistener)
+
 This component contains a Java class implementing the [Tomcat Lifecycle Listener](https://tomcat.apache.org/tomcat-7.0-doc/config/context.html#Lifecycle_Listeners) to 
 shut down or exit Tomcat on a failed deployment.
 
