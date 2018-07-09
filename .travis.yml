@@ -1,0 +1,4 @@
+# we will build for JDK6 but with JDK8 because JDK6 doesn't supported by Travis CI
+language: java
+jdk:
+  - openjdk8

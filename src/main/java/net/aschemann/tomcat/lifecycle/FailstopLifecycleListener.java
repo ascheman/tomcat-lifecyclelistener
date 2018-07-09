@@ -12,6 +12,10 @@ import java.util.logging.Logger;
 
 /**
  * Apache Tomcat LifecycleListener which shuts down Tomcat after a failed WAR deployment.
+ * Set "force" to just perform a "System.exit" of the server JVM
+ * Otherwise enable call to shutdown port, optionally
+ * set port (default: 8005) and shutdown command (default: SHUTDOWN) as in server.xml
+ * set waitForStart (default 30s) to make the shut down command wait until TC is completely up and running
  *
  * @author Gerd Aschemann &lt;gerd@aschemann.net&gt;
  */
@@ -22,12 +26,12 @@ public class FailstopLifecycleListener implements LifecycleListener {
     /**
      * The port of the shutdown listener of Tomcat - see server.xml
      */
-    private int port = 8015;
+    private int port = 8005;
 
     /**
      * The command string to send for shutdown - see server.xml
      */
-    private String shutdown = "shutdown";
+    private String shutdown = "SHUTDOWN";
 
     /**
      * Force the shutdown via System.exit

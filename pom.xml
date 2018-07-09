@@ -33,7 +33,7 @@
     <scm>
         <connection>scm:git:git://github.com/ascheman/tomcat-lifecyclelistener.git</connection>
         <developerConnection>scm:git:ssh://github.com:ascheman/tomcat-lifecyclelistener.git</developerConnection>
-        <url>http://github.com/ascheman/tomcat-lifecyclelistener/tree/master</url>
+        <url>https://github.com/ascheman/tomcat-lifecyclelistener/tree/master</url>
     </scm>
 
     <issueManagement>
@@ -43,8 +43,9 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.6</maven.compiler.source>
+        <maven.compiler.target>1.6</maven.compiler.target>
     </properties>
-
     <dependencies>
         <dependency>
             <groupId>org.apache.tomcat</groupId>
@@ -52,15 +53,4 @@
             <version>7.0.70</version>
         </dependency>
     </dependencies>
-
-    <reporting>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-project-info-reports-plugin</artifactId>
-                <version>2.7</version>
-            </plugin>
-        </plugins>
-    </reporting>
-
 </project>
