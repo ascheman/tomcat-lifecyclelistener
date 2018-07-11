@@ -18,7 +18,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.6</maven.compiler.source>
         <maven.compiler.target>1.6</maven.compiler.target>
-        <tomcat-catalina.version>7.0.70</tomcat-catalina.version>
+        <tomcat-catalina.version>7.0.90</tomcat-catalina.version>
     </properties>
 
     <licenses>
