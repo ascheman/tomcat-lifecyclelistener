@@ -2,12 +2,13 @@
 
 [![Build Status](https://travis-ci.org/ascheman/tomcat-lifecyclelistener.svg?branch=master)](https://travis-ci.org/ascheman/tomcat-lifecyclelistener)
 
-This component contains a Java class implementing the [Tomcat Lifecycle Listener](https://tomcat.apache.org/tomcat-9.0-doc/config/context.html#Lifecycle_Listeners) to 
-shut down or exit Tomcat on a failed deployment.
+This component contains a Java class implementing the [Tomcat Lifecycle
+Listener](https://tomcat.apache.org/tomcat-9.0-doc/config/context.html#Lifecycle_Listeners) to shut down or exit Tomcat
+on a failed deployment.
 
 Add it to Tomcat:
  
-* Copy the JAR to the `${catalina.base}/lib` directory;
+* Copy the JAR to the `${catalina.base}/lib` directory
 * Extend the configuration within the `context.xml` as
 
 ```xml
@@ -28,7 +29,8 @@ The port and password are configured in `${catalina.base}/conf/server.xml` file 
 
 For security reasons port and the shutdown password may be changed so you can override it as well as other defaults:
 ```xml
-    <Listener className="net.aschemann.tomcat.lifecycle.FailstopLifecycleListener" port="29821" shutdown="Hasta la vista, baby!" waitForStart="20"/>
+    <Listener className="net.aschemann.tomcat.lifecycle.FailstopLifecycleListener" port="29821" 
+        shutdown="Hasta la vista, baby!" waitForStart="20" />
 ```
 
 Or if you need to exit without gracefully shutdown you can use the `force` attribute:
