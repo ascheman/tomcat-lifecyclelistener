@@ -14,6 +14,13 @@
         Cf. README and JavaDoc for further information.
     </description>
 
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.6</maven.compiler.source>
+        <maven.compiler.target>1.6</maven.compiler.target>
+        <tomcat-catalina.version>7.0.70</tomcat-catalina.version>
+    </properties>
+
     <licenses>
         <license>
             <name>The Apache License, Version 2.0</name>
@@ -41,16 +48,11 @@
         <url>https://github.com/ascheman/tomcat-lifecyclelistener/issues</url>
     </issueManagement>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.6</maven.compiler.source>
-        <maven.compiler.target>1.6</maven.compiler.target>
-    </properties>
     <dependencies>
         <dependency>
             <groupId>org.apache.tomcat</groupId>
             <artifactId>tomcat-catalina</artifactId>
-            <version>7.0.70</version>
+            <version>${tomcat-catalina.version}</version>
         </dependency>
     </dependencies>
 </project>
