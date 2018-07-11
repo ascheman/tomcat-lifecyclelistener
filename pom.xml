@@ -11,6 +11,7 @@
 
         Cf. README and JavaDoc for further information.
     </description>
+    <url>https://github.com/ascheman/tomcat-lifecyclelistener.git</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
