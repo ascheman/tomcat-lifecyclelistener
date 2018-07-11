@@ -6,7 +6,7 @@
 
     <groupId>net.aschemann.tomcat</groupId>
     <artifactId>tomcat-lifecyclelistener</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
 
     <name>Tomcat Failstop LifecycleListener</name>
     <description>Tomcat LifecycleListener to shut down/exit Tomcat on a failed deployment.
