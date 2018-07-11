@@ -58,7 +58,7 @@
 
     <scm>
         <connection>scm:git:git://github.com/ascheman/tomcat-lifecyclelistener.git</connection>
-        <developerConnection>scm:git:ssh://github.com/ascheman/tomcat-lifecyclelistener.git</developerConnection>
+        <developerConnection>scm:git:git://github.com/ascheman/tomcat-lifecyclelistener.git</developerConnection>
         <url>https://github.com/ascheman/tomcat-lifecyclelistener/tree/master</url>
     </scm>
 
