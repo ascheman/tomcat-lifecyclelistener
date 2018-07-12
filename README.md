@@ -8,7 +8,7 @@ on a failed deployment.
 
 Add it to Tomcat:
  
-* Copy the JAR to the `${catalina.base}/lib` directory
+* Download [tomcat-lifecyclelistener.jar](https://repo1.maven.org/maven2/net/aschemann/tomcat/tomcat-lifecyclelistener/1.0.1/tomcat-lifecyclelistener-1.0.1.jar) and put it into the `${catalina.base}/lib` directory
 * Extend the configuration within the `context.xml` as
 
 ```xml
@@ -37,3 +37,15 @@ Or if you need to exit without gracefully shutdown you can use the `force` attri
 ```xml
     <Listener className="net.aschemann.tomcat.lifecycle.FailstopLifecycleListener" force="true" />
 ```
+
+Optionally you can also add the library to your app's `pom.xml`:
+```xml
+<dependency>
+    <groupId>net.aschemann.tomcat</groupId>
+    <artifactId>tomcat-lifecyclelistener</artifactId>
+    <version>1.0.1</version>
+    <scope>provided</scope>
+</dependency>
+```
+
+Thus you'll be able to debug the `FailstopLifecycleListener` class.
